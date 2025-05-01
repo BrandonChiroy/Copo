@@ -1,0 +1,26 @@
+﻿@model List<Producto>
+@{
+    ViewBag.Title = "Productos Vendidos en 2019";
+}
+
+<h2>Filtrar por Categoría</h2>
+
+@using (Html.BeginForm("Index", "Productos", FormMethod.Get))
+{
+    @Html.DropDownList("categoriaId", (SelectList)ViewBag.Categorias, "Seleccione una categoría", new { onchange = "this.form.submit();" })
+}
+
+@if (Model.Any())
+{
+    <h3>Productos vendidos en 2019</h3>
+    <ul>
+        @foreach (var producto in Model)
+        {
+            <li>@producto.Nombre</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No hay productos para mostrar.</p>
+}

@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=LAPTOP-RU956HKF;Database=ProductosDB;User ID=ProductosDBUser;Password=1234;"
+  }
+}
